@@ -1,0 +1,27 @@
+{% extends "login/layout.html" %}
+
+{%block body %} 
+    <H2 style="text-align:center">REGISTER</H2>
+    <div style="margin-top: 30px; margin-left: 400px; margin-right: 400px; margin-bottom: 50px;">
+        <a href="{% url 'login:index'%}" class="alert alert-light">Already registered? Click here!</a>
+    </div>
+    <div class="form-group">
+    <form action="{% url 'login:register'%}" method="POST">
+        {% csrf_token %}
+        <label for="fname">First name:</label><br>
+        <input type="text" name="fname" placeholder="First name" class="form-control"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" name="lname" placeholder="Last name" class="form-control"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" name="email" placeholder="Email" class="form-control"><br>
+        <label for="username">Set Username:</label><br>
+        <input type="text" name="username" placeholder="Username" class="form-control"><br>
+        <label for="password">Set Password:</label><br>
+        <input type="password" name="password" placeholder="Password" class="form-control"><br><br>
+        <button type="login" class="btn btn-light">Submit</button>
+    </form>
+    </div>
+    {% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endif %}
+{% endblock %}
