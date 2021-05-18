@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "login",
     "tasks",
     "home",
+    "gallary",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django import forms
-from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import todolist
 
@@ -19,18 +18,47 @@ def index(request):
                 x=todolist(task_info=task, status=False, task_number=k)
                 x.save()
     return render(request,"tasks/index.html", {
-            "data": todolist.objects.all()
+            "data": todolist.objects.all(),"update": True
         })
 
 def done(request):
-    task=request.POST["done_task"]
-    todolist.objects.filter(task_number=task).update(status=True)
+    action=request.POST["action"]
+    if request.POST["action"] is False:
+        return render(request,"tasks/index.html", {
+            "data": todolist.objects.all(),"update": True
+    })
+
     return render(request,"tasks/index.html", {
-            "data": todolist.objects.all()
+            "data": todolist.objects.all(),action: True
+    })
+
+def completed(request):
+    if request.method == "POST":
+        task=request.POST["completed"]
+        todolist.objects.filter(task_number=task).update(status=True)
+    return render(request,"tasks/index.html", {
+            "data": todolist.objects.all(),"update": True
         })
 
+def incomplete(request):
+    if request.method == "POST":
+        task=request.POST["incomplete"]
+        todolist.objects.filter(task_number=task).update(status=False)
+    return render(request,"tasks/index.html", {
+            "data": todolist.objects.all(),"update": True
+        })
+
+def clear(request):
+    if request.method == "POST":
+        task=request.POST["clear"]
+        todolist.objects.filter(task_number=task).delete()
+    return render(request,"tasks/index.html", {
+            "data": todolist.objects.all(),"update": True
+        })
+    
 def clearall(request):
     todolist.objects.all().delete()
     return render(request,"tasks/index.html", {
             "data": todolist.objects.all()
         })
+        

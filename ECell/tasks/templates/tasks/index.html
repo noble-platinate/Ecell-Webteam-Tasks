@@ -4,7 +4,7 @@
     <h1 class="alert alert-light" style="margin-top: 10px; text-align: center; margin-right: 600px; margin-left: 600px">To-Do List</h1>
     <div class="col">
         <div class="alert alert-warning" role="alert">
-            <h3>Uncompleted Tasks:</h3>
+            <h3>Incompleted Tasks:</h3>
             <ul>
                 {% for task in data %}
                     {% if not task.status %}
@@ -41,24 +41,74 @@
     </form>
     </div>
 
-    <div class="col">       
+    <div class="col">
+        {% if update %}       
         <form action="{% url 'tasks:done' %}" method="post">
             {% csrf_token %}
             <div style="text-align:center; margin-right: 200px; margin-left: 200px;margin-bottom: 20px;">
-                <label for="form" class="alert alert-danger">Select completed task:</label><br>
-                <select class="form-select" aria-label="Default select example" name="done_task">
-                    <option selected>Select the task</option>
-                    {% for task in data %}
-                    {% if not task.status %}
-                        <option value={{task.task_number}}>{{task.task_info}}</option>
-                    {% endif %}
-                    {% endfor %}
+                <label for="form" class="alert alert-danger">Update To-Do list:</label><br>
+                <select class="form-select" aria-label="Default select example" name="action">
+                    <option selected>Select action</option>
+                    <option value="clear">Delete task from list</option>
+                    <option value="completed">Mark completed task as completed</option>
+                    <option value="incomplete">Mark completed task as incomplete</option>
                 </select>
-                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Update</button>
+                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Show Options</button>
             </div>
         </form>
+        {% endif %}
+        {% if clear %}
+        <form action="{% url 'tasks:clear' %}" method="post">
+            {% csrf_token %}
+            <div style="text-align:center; margin-right: 200px; margin-left: 200px;margin-bottom: 20px;">
+                <label for="form" class="alert alert-danger">Select task to delete</label><br>
+                <select class="form-select" aria-label="Default select example" name="clear">
+                    <option selected>Select the task</option>
+                    {% for task in data %}
+                        <option value={{task.task_number}}>{{task.task_info}}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Submit</button>
+            </div>
+        </form>
+        {% endif %}
+        {% if completed%}
+        <form action="{% url 'tasks:completed' %}" method="post">
+            {% csrf_token %}
+            <div style="text-align:center; margin-right: 200px; margin-left: 200px;margin-bottom: 20px;">
+                <label for="form" class="alert alert-danger">Select task to mark as completed:</label><br>
+                <select class="form-select" aria-label="Default select example" name="completed">
+                    <option selected>Select the task</option>
+                    {% for task in data %}
+                        {% if not task.status %}
+                            <option value={{task.task_number}}>{{task.task_info}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Submit</button>
+            </div>
+        </form>
+        {% endif %}
+        {% if incomplete %}
+        <form action="{% url 'tasks:incomplete' %}" method="post">
+            {% csrf_token %}
+            <div style="text-align:center; margin-right: 200px; margin-left: 200px;margin-bottom: 20px;">
+                <label for="form" class="alert alert-danger">Select task to mark as incomplete</label>:</label><br>
+                <select class="form-select" aria-label="Default select example" name="incomplete">
+                    <option selected>Select the task</option>
+                    {% for task in data %}
+                        {% if task.status %}
+                            <option value={{task.task_number}}>{{task.task_info}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Submit</button>
+            </div>
+        </form>
+        {% endif %}
     </div>
     <div style="text-align:center">
         <a href="{% url 'tasks:clearall' %}" class="btn btn-primary" style="margin-bottom:20px">Clear all</a>
     </div>
 {% endblock %}
+
