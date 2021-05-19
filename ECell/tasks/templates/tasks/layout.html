@@ -8,7 +8,15 @@
         </style>
     </head>
     <body>
+        <h5 type="button" class="alert alert-light" style="text-align: center; margin-right: 670px; margin-left: 670px;margin-top: 10px;">Home</h5>
+
         {% block body %}
         {% endblock %}
     </body>
+    <script>
+        document.querySelector('h5').onclick= function() 
+        {
+            location.href="http://127.0.0.1:8000/"
+        }
+    </script>
 </html>

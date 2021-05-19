@@ -3,7 +3,7 @@ from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
-app_name = "gallary"
+app_name = "gallery"
 
 urlpatterns = [
     path("",views.index,name="index"),

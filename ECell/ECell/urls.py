@@ -22,6 +22,6 @@ urlpatterns = [
     path('',include('home.urls')),
     path('tasks/',include('tasks.urls')),
     path('form/',include("login.urls")),
-    path('gallary/',include('gallary.urls'))
+    path('gallery/',include('gallery.urls'))
 ]
 

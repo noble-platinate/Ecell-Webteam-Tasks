@@ -36,7 +36,7 @@
         <div style="text-align:center; margin-right: 200px; margin-left: 200px">
             <label for="form" class="alert alert-danger">Add to To-Do list:</label><br>
             <input type="text" name="new_task" class="form-control" placeholder="Enter here">
-            <button type="submit" class="btn btn-primary" style="opacity:0.8;margin-top:20px;text-align:center;margin-bottom: 20px;">Submit</button>
+            <button type="submit" class="btn btn-primary" style="opacity:0.8;margin-top:20px;text-align:center;margin-bottom: 20px;">Add task</button>
         </div>
     </form>
     </div>
@@ -68,7 +68,7 @@
                         <option value={{task.task_number}}>{{task.task_info}}</option>
                     {% endfor %}
                 </select>
-                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Submit</button>
+                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Delete</button>
             </div>
         </form>
         {% endif %}
@@ -85,7 +85,7 @@
                         {% endif %}
                     {% endfor %}
                 </select>
-                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Submit</button>
+                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Mark as complete</button>
             </div>
         </form>
         {% endif %}
@@ -102,7 +102,7 @@
                         {% endif %}
                     {% endfor %}
                 </select>
-                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Submit</button>
+                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Mark as incomplete</button>
             </div>
         </form>
         {% endif %}
