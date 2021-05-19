@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "tasks",
     "home",
     "gallery",
+    "tictactoe",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

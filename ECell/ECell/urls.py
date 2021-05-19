@@ -22,6 +22,7 @@ urlpatterns = [
     path('',include('home.urls')),
     path('tasks/',include('tasks.urls')),
     path('form/',include("login.urls")),
-    path('gallery/',include('gallery.urls'))
+    path('gallery/',include('gallery.urls')),
+    path('tictactoe/',include('tictactoe.urls')),
 ]
 
