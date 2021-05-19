@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{% static 'styl.css'%}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+</head>
+<body>
+    <h5 type="button" class="alert alert-light" style="text-align: center; margin-right: 670px; margin-left: 670px;margin-top: 10px;" id="back">Home</h5>
+    <div class="card" style="width: 18rem; text-align:center; margin: 50px auto; margin-top: 250px">
+        <div class="card-body">
+            <h1 style="text-align:center"> Let's quiz!</h1><br>
+          <button class="button button-primary" id="start">Start</button>
+          </p>
+        </div>
+      </div>
+</body>
+<script>
+    document.querySelector('#back').onclick = function() 
+    {
+        location.href="http://127.0.0.1:8000/"
+    }
+    document.querySelector('#start').onclick = function() 
+    {
+        location.href="http://127.0.0.1:8000/quiz/quiz"
+    }
+</script>
+
+</html>

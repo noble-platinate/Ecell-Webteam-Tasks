@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "home",
     "gallery",
     "tictactoe",
+    "quiz",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
