@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gallary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <style>
+        body,html{overflow:scroll; height: 100%;}
+        .bg{background-image: url("{% static 'ball.jpg' %}"); height: 100%;  background-repeat: no-repeat; background-size: cover;}
+        .card{width: 18rem;}
+        .card-img-top{width: 100%; height:100%}
+        #card {margin-bottom:90px;width: 300px; height:200px}
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <br><br>
+    <h2 class="alert alert-light" style="text-align: center; margin-right: 600px; margin-left: 600px; margin-bottom: 60px;">Gallary</h2>
+    
+    {% if messi %}
+    <div class="container" style="margin-left: 120px;">
+        <div class="row">
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'messi/1.jpg' %}" class="card-img-top" alt="..." >
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'messi/2.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'messi/3.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'messi/4.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'messi/5.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'messi/6.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'messi/7.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'messi/8.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+        </div>
+    </div> 
+    {% endif %}
+
+    {% if ronaldo %}
+    <div class="container" style="margin-left: 120px;">
+        <div class="row">
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'ronaldo/1.jpg' %}" class="card-img-top" alt="..." >
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'ronaldo/2.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'ronaldo/3.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'ronaldo/4.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'ronaldo/5.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'ronaldo/6.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'ronaldo/7.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'ronaldo/8.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if lewan %}
+    <div class="container" style="margin-left: 120px;">
+        <div class="row">
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'lewan/1.jpg' %}" class="card-img-top" alt="..." >
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'lewan/2.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'lewan/3.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'lewan/4.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'lewan/5.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'lewan/6.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'lewan/7.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-lg-3 d-flex align-items-stretch" id="card" style="padding:10px">
+                <div class="card">
+                    <img src="{% static 'lewan/8.jpg' %}" class="card-img-top" alt="...">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    </div> 
+</body>
+</html>
