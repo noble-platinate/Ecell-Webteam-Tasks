@@ -24,6 +24,7 @@ urlpatterns = [
     path('form/',include("login.urls")),
     path('gallery/',include('gallery.urls')),
     path('tictactoe/',include('tictactoe.urls')),
-    path('quiz/',include('quiz.urls'))
+    path('quiz/',include('quiz.urls')),
+    path('linkedin/',include('linkedin.urls'))
 ]
 
