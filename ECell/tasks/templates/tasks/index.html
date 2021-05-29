@@ -1,7 +1,7 @@
 {% extends "tasks/layout.html" %}
 
 {% block body %}
-    <h1 class="alert alert-light" style="margin-top: 10px; text-align: center; margin-right: 600px; margin-left: 600px">To-Do List</h1>
+    <h1 class="alert alert-light" style="margin-top: 1%; text-align: center; margin-right: 30%; margin-left: 30%">To-Do List</h1>
     <div class="col">
         <div class="alert alert-warning" role="alert">
             <h3>Incompleted Tasks:</h3>
@@ -25,7 +25,7 @@
                     {% if task.status %}
                     <li>{{task.task_info}}</li>
                     {% endif %}
-                {% endfor %}
+        1        {% endfor %}
             </ul>
         </div>
     </div>
@@ -33,10 +33,10 @@
     <div class="col">       
     <form action="{% url 'tasks:index' %}" method="post">
         {% csrf_token %}
-        <div style="text-align:center; margin-right: 200px; margin-left: 200px">
+        <div style="text-align:center; margin-right: 30%; margin-left: 30%">
             <label for="form" class="alert alert-danger">Add to To-Do list:</label><br>
             <input type="text" name="new_task" class="form-control" placeholder="Enter here">
-            <button type="submit" class="btn btn-primary" style="opacity:0.8;margin-top:20px;text-align:center;margin-bottom: 20px;">Add task</button>
+            <button type="submit" class="btn btn-primary" style="opacity:0.8;margin-top:3%;text-align:center;margin-bottom: 3%;">Add task</button>
         </div>
     </form>
     </div>
@@ -45,7 +45,7 @@
         {% if update %}       
         <form action="{% url 'tasks:done' %}" method="post">
             {% csrf_token %}
-            <div style="text-align:center; margin-right: 200px; margin-left: 200px;margin-bottom: 20px;">
+            <div style="text-align:center; margin-right: 30%; margin-left: 30%;margin-bottom: 2%;">
                 <label for="form" class="alert alert-danger">Update To-Do list:</label><br>
                 <select class="form-select" aria-label="Default select example" name="action">
                     <option selected>Select action</option>
@@ -53,14 +53,14 @@
                     <option value="completed">Mark completed task as completed</option>
                     <option value="incomplete">Mark completed task as incomplete</option>
                 </select>
-                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Show Options</button>
+                <button type="submit" class="btn btn-primary" style="margin-top:3%;text-align:center">Show Options</button>
             </div>
         </form>
         {% endif %}
         {% if clear %}
         <form action="{% url 'tasks:clear' %}" method="post">
             {% csrf_token %}
-            <div style="text-align:center; margin-right: 200px; margin-left: 200px;margin-bottom: 20px;">
+            <div style="text-align:center; margin-right: 30%; margin-left: 30%;margin-bottom: 2%;">
                 <label for="form" class="alert alert-danger">Select task to delete</label><br>
                 <select class="form-select" aria-label="Default select example" name="clear">
                     <option selected>Select the task</option>
@@ -68,14 +68,14 @@
                         <option value={{task.task_number}}>{{task.task_info}}</option>
                     {% endfor %}
                 </select>
-                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Delete</button>
+                <button type="submit" class="btn btn-primary" style="margin-top:3%;text-align:center">Delete</button>
             </div>
         </form>
         {% endif %}
         {% if completed%}
         <form action="{% url 'tasks:completed' %}" method="post">
             {% csrf_token %}
-            <div style="text-align:center; margin-right: 200px; margin-left: 200px;margin-bottom: 20px;">
+            <div style="text-align:center; margin-right: 30%; margin-left: 30%;margin-bottom: 2%;">
                 <label for="form" class="alert alert-danger">Select task to mark as completed:</label><br>
                 <select class="form-select" aria-label="Default select example" name="completed">
                     <option selected>Select the task</option>
@@ -85,14 +85,14 @@
                         {% endif %}
                     {% endfor %}
                 </select>
-                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Mark as complete</button>
+                <button type="submit" class="btn btn-primary" style="margin-top:3%;text-align:center">Mark as complete</button>
             </div>
         </form>
         {% endif %}
         {% if incomplete %}
         <form action="{% url 'tasks:incomplete' %}" method="post">
             {% csrf_token %}
-            <div style="text-align:center; margin-right: 200px; margin-left: 200px;margin-bottom: 20px;">
+            <div style="text-align:center; margin-right: 30%; margin-left: 30%;margin-bottom: 2%;">
                 <label for="form" class="alert alert-danger">Select task to mark as incomplete</label>:</label><br>
                 <select class="form-select" aria-label="Default select example" name="incomplete">
                     <option selected>Select the task</option>
@@ -102,13 +102,13 @@
                         {% endif %}
                     {% endfor %}
                 </select>
-                <button type="submit" class="btn btn-primary" style="margin-top:20px;text-align:center">Mark as incomplete</button>
+                <button type="submit" class="btn btn-primary" style="margin-top:3%;text-align:center">Mark as incomplete</button>
             </div>
         </form>
         {% endif %}
     </div>
     <div style="text-align:center">
-        <a href="{% url 'tasks:clearall' %}" class="btn btn-primary" style="margin-bottom:20px">Clear all</a>
+        <a href="{% url 'tasks:clearall' %}" class="btn btn-primary" style="margin-bottom:2%">Clear all</a>
     </div>
 {% endblock %}
 
